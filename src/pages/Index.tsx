@@ -2,7 +2,6 @@ import { Calendar, Code, Globe, Database, Cloud, Brain } from "lucide-react";
 import { GlassCard } from "@/components/GlassCard";
 import { SocialLinks } from "@/components/SocialLinks";
 import { ServiceCard } from "@/components/ServiceCard";
-import { ProjectCard } from "@/components/ProjectCard";
 import { Navigation } from "@/components/Navigation";
 
 const services = [
@@ -13,7 +12,7 @@ const services = [
   },
   {
     title: "Metaverse & Virtual Worlds",
-    description: "Creating immersive digital experiences",
+    description: "Creating immersive digital experiences with Unity",
     icon: Globe,
   },
   {
@@ -23,7 +22,7 @@ const services = [
   },
   {
     title: "Cloud Architecture",
-    description: "Scalable and secure cloud solutions",
+    description: "Scalable and secure cloud solutions with DevOps practices",
     icon: Cloud,
   },
   {
@@ -33,25 +32,14 @@ const services = [
   },
 ];
 
-const projects = [
-  {
-    title: "Metaverse Platform",
-    description: "A virtual world platform with blockchain integration",
-    image: "/placeholder.svg",
-    link: "#",
-  },
-  {
-    title: "AI-Powered Analytics",
-    description: "Business intelligence with machine learning",
-    image: "/placeholder.svg",
-    link: "#",
-  },
-  {
-    title: "Cloud Migration Solution",
-    description: "Enterprise-scale cloud architecture",
-    image: "/placeholder.svg",
-    link: "#",
-  },
+const techStacks = [
+  "MERN Stack (MongoDB, Express.js, React, Node.js)",
+  "MEAN Stack (MongoDB, Express.js, Angular, Node.js)",
+  "DevOps (Docker, Kubernetes, Jenkins, GitLab CI/CD)",
+  "Cloud (AWS, Azure, GCP)",
+  "Generative AI & Machine Learning",
+  "Unity 3D & Virtual Worlds",
+  "Blockchain (Ethereum, Solidity, Web3.js)",
 ];
 
 const Index = () => {
@@ -76,6 +64,18 @@ const Index = () => {
               Hi, I'm Muhammad Afzal, a Full Stack Developer specializing in creating immersive Metaverse and Virtual Worlds with Blockchain and AI integration. I am also a DevSecOps and Cloud Expert, delivering innovative Generative AI solutions.
             </p>
           </GlassCard>
+
+          {/* Tech Stacks Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-up" style={{ animationDelay: "500ms" }}>
+            {techStacks.map((tech, index) => (
+              <div
+                key={tech}
+                className="backdrop-blur-lg bg-glass/20 border border-white/10 rounded-lg px-4 py-3 text-sm text-white/90"
+              >
+                {tech}
+              </div>
+            ))}
+          </div>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 animate-fade-up" style={{ animationDelay: "600ms" }}>
             <a
@@ -93,21 +93,11 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section className="container py-20">
+      <section id="services" className="container py-20">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service) => (
             <ServiceCard key={service.title} {...service} />
-          ))}
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
-      <section className="container py-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project) => (
-            <ProjectCard key={project.title} {...project} />
           ))}
         </div>
       </section>
