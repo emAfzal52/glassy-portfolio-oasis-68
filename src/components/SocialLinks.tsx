@@ -30,14 +30,14 @@ const socialLinks = [
 
 export const SocialLinks = () => {
   return (
-    <div className="flex gap-4">
+    <div className="flex gap-6">
       {socialLinks.map((link) => (
         <a
           key={link.name}
           href={link.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-foreground/80 hover:text-accent transition-colors"
+          className="text-white/80 hover:text-accent transition-all hover:scale-110"
           aria-label={link.name}
         >
           <link.icon className="w-6 h-6" />

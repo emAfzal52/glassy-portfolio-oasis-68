@@ -40,6 +40,9 @@ export default {
           DEFAULT: "rgba(255, 255, 255, 0.1)",
           dark: "rgba(0, 0, 0, 0.1)",
         },
+        hero: {
+          DEFAULT: "#020817",
+        },
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
