@@ -1,4 +1,5 @@
 import { Calendar } from "lucide-react";
+import { code, globe, database, cloud, brain } from "lucide-react";
 import { GlassCard } from "@/components/GlassCard";
 import { SocialLinks } from "@/components/SocialLinks";
 import { ServiceCard } from "@/components/ServiceCard";
@@ -9,27 +10,27 @@ const services = [
   {
     title: "Full Stack Development",
     description: "MERN/MEAN stack development with modern technologies",
-    icon: Code,
+    icon: code,
   },
   {
     title: "Metaverse & Virtual Worlds",
     description: "Creating immersive digital experiences",
-    icon: Globe,
+    icon: globe,
   },
   {
     title: "Blockchain Integration",
     description: "Smart contracts and decentralized applications",
-    icon: Database,
+    icon: database,
   },
   {
     title: "Cloud Architecture",
     description: "Scalable and secure cloud solutions",
-    icon: Cloud,
+    icon: cloud,
   },
   {
     title: "AI Solutions",
     description: "Generative AI and machine learning integration",
-    icon: Brain,
+    icon: brain,
   },
 ];
 
