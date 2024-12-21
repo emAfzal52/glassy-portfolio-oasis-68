@@ -1,12 +1,161 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Calendar, Code, Globe, Database, Cloud, Brain } from "lucide-react";
+import { GlassCard } from "@/components/GlassCard";
+import { SocialLinks } from "@/components/SocialLinks";
+import { ServiceCard } from "@/components/ServiceCard";
+import { ProjectCard } from "@/components/ProjectCard";
+
+const services = [
+  {
+    title: "Full Stack Development",
+    description: "MERN/MEAN stack development with modern technologies",
+    icon: Code,
+  },
+  {
+    title: "Metaverse & Virtual Worlds",
+    description: "Creating immersive digital experiences",
+    icon: Globe,
+  },
+  {
+    title: "Blockchain Integration",
+    description: "Smart contracts and decentralized applications",
+    icon: Database,
+  },
+  {
+    title: "Cloud Architecture",
+    description: "Scalable and secure cloud solutions",
+    icon: Cloud,
+  },
+  {
+    title: "AI Solutions",
+    description: "Generative AI and machine learning integration",
+    icon: Brain,
+  },
+];
+
+const projects = [
+  {
+    title: "Metaverse Platform",
+    description: "A virtual world platform with blockchain integration",
+    image: "/placeholder.svg",
+    link: "#",
+  },
+  {
+    title: "AI-Powered Analytics",
+    description: "Business intelligence with machine learning",
+    image: "/placeholder.svg",
+    link: "#",
+  },
+  {
+    title: "Cloud Migration Solution",
+    description: "Enterprise-scale cloud architecture",
+    image: "/placeholder.svg",
+    link: "#",
+  },
+];
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
+      {/* Hero Section */}
+      <section className="container py-20 animate-fade-in">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            Muhammad Afzal
+          </h1>
+          <GlassCard className="mb-8">
+            <p className="text-lg md:text-xl text-foreground/80">
+              Hi, I'm Muhammad Afzal, a Full Stack Developer specializing in creating immersive Metaverse and Virtual Worlds with Blockchain and AI integration. I am also a DevSecOps and Cloud Expert, delivering innovative Generative AI solutions.
+            </p>
+          </GlassCard>
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <a
+              href="https://calendar.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-full font-medium transition-colors"
+            >
+              <Calendar className="w-5 h-5" />
+              Book a Meeting
+            </a>
+            <SocialLinks />
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="container py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service) => (
+            <ServiceCard key={service.title} {...service} />
+          ))}
+        </div>
+      </section>
+
+      {/* Portfolio Section */}
+      <section className="container py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} {...project} />
+          ))}
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="container py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
+        <GlassCard className="max-w-xl mx-auto">
+          <form className="space-y-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-medium mb-2">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-2">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+              />
+            </div>
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium mb-2">
+                Message
+              </label>
+              <textarea
+                id="message"
+                rows={4}
+                className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              className="w-full bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+            >
+              Send Message
+            </button>
+          </form>
+        </GlassCard>
+      </section>
+
+      {/* Footer */}
+      <footer className="container py-8 border-t border-white/10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-foreground/80">
+            © 2024 Muhammad Afzal. All rights reserved.
+          </p>
+          <SocialLinks />
+        </div>
+      </footer>
     </div>
   );
 };
