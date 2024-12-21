@@ -22,11 +22,11 @@ export const Navigation = () => {
 
   return (
     <GlassCard 
-      className={`fixed w-full z-50 transition-transform duration-300 px-8 py-6 ${
+      className={`fixed w-full z-50 transition-transform duration-300 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <nav className="container mx-auto">
+      <nav className="max-w-4xl mx-auto px-8 py-6">
         <div className="flex items-center justify-center">
           <div className="hidden md:flex items-center space-x-12">
             <a href="#about" className="text-white hover:text-accent transition-colors">
@@ -43,7 +43,6 @@ export const Navigation = () => {
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white focus:outline-none"
             onClick={toggleMenu}
@@ -52,7 +51,6 @@ export const Navigation = () => {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 space-y-4">
             <a

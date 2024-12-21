@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { GlassCard } from "./GlassCard";
 
 const testimonials = [
@@ -36,18 +36,6 @@ const testimonials = [
 
 export const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  const scrollToIndex = (index: number) => {
-    if (scrollRef.current) {
-      const scrollAmount = 340 * index; // Width of one card + gap
-      scrollRef.current.scrollTo({
-        left: scrollAmount,
-        behavior: 'smooth'
-      });
-      setActiveIndex(index);
-    }
-  };
 
   return (
     <section id="testimonials" className="container py-20">
@@ -58,15 +46,11 @@ export const Testimonials = () => {
           ref={scrollRef}
           className="flex overflow-x-auto gap-8 pb-8 px-8 snap-x snap-mandatory scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          onScroll={(e) => {
-            const index = Math.round(e.currentTarget.scrollLeft / 340);
-            setActiveIndex(index);
-          }}
         >
           {testimonials.map((testimonial, index) => (
             <GlassCard 
               key={index}
-              className="flex-none w-80 flex flex-col gap-4 p-6 snap-center animate-fade-up hover:scale-105 transition-transform"
+              className="flex-none w-[calc(33.333%-1rem)] min-w-[320px] flex flex-col gap-4 p-6 snap-center animate-fade-up hover:scale-105 transition-transform"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="flex items-center gap-4">
@@ -85,20 +69,10 @@ export const Testimonials = () => {
           ))}
         </div>
 
-        {/* Dots Navigation */}
         <div className="flex justify-center gap-3 mt-6">
-          {testimonials.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                activeIndex === index 
-                  ? 'bg-white scale-125' 
-                  : 'bg-white/30 hover:bg-white/50'
-              }`}
-              aria-label={`Go to testimonial ${index + 1}`}
-            />
-          ))}
+          <span className="w-2 h-2 rounded-full bg-white/50 animate-dot-slide" />
+          <span className="w-2 h-2 rounded-full bg-white/50 animate-dot-slide" style={{ animationDelay: '0.5s' }} />
+          <span className="w-2 h-2 rounded-full bg-white/50 animate-dot-slide" style={{ animationDelay: '1s' }} />
         </div>
       </div>
     </section>
