@@ -22,16 +22,12 @@ export const Navigation = () => {
 
   return (
     <GlassCard 
-      className={`fixed w-full z-50 transition-transform duration-300 px-8 py-6 ${
+      className={`fixed w-full z-50 transition-transform duration-300 px-6 py-4 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <nav className="container mx-auto">
-        <div className="flex items-center justify-between">
-          <a href="#" className="text-2xl font-bold text-white">
-            Muhammad Afzal
-          </a>
-
+        <div className="flex items-center justify-end">
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="text-white hover:text-accent transition-colors">
