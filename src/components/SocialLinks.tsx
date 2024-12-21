@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Mail } from "lucide-react";
+import { Github, Linkedin, Twitter, Instagram, Mail, Facebook, Youtube, Smartphone, Globe } from "lucide-react";
 
 const socialLinks = [
   {
@@ -12,14 +12,24 @@ const socialLinks = [
     icon: Github,
   },
   {
-    name: "Twitter",
-    url: "#",
-    icon: Twitter,
+    name: "WhatsApp",
+    url: "https://wa.me/yournumber", // Replace with your WhatsApp number
+    icon: Smartphone,
   },
   {
-    name: "Instagram",
-    url: "#",
-    icon: Instagram,
+    name: "YouTube",
+    url: "#", // Replace with your YouTube channel
+    icon: Youtube,
+  },
+  {
+    name: "Facebook",
+    url: "#", // Replace with your Facebook profile
+    icon: Facebook,
+  },
+  {
+    name: "Website",
+    url: "#", // Replace with your website URL
+    icon: Globe,
   },
   {
     name: "Email",

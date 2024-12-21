@@ -25,51 +25,28 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#9b87f5", // Deep purple
+          DEFAULT: "#9b87f5",
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#1A1F2C", // Dark navy
+          DEFAULT: "#1A1F2C",
           foreground: "#ffffff",
         },
+        sections: {
+          hero: "#2F4F4F", // Dark slate gray
+          about: "#808080", // Medium gray
+          services: "#D3D3D3", // Light gray
+          testimonials: "#36454F", // Charcoal
+          footer: "#1A1A1A", // Very dark gray
+        },
         accent: {
-          DEFAULT: "#8B5CF6", // Bright purple
+          DEFAULT: "#8B5CF6",
           foreground: "#ffffff",
         },
         glass: {
           DEFAULT: "rgba(255, 255, 255, 0.05)",
           dark: "rgba(0, 0, 0, 0.3)",
         },
-        hero: {
-          DEFAULT: "#222222", // Dark gray
-        },
-      },
-      fontFamily: {
-        sans: ["Inter", "sans-serif"],
-      },
-      keyframes: {
-        "fade-up": {
-          "0%": {
-            opacity: "0",
-            transform: "translateY(10px)",
-          },
-          "100%": {
-            opacity: "1",
-            transform: "translateY(0)",
-          },
-        },
-        "fade-in": {
-          "0%": {
-            opacity: "0",
-          },
-          "100%": {
-            opacity: "1",
-          },
-        },
-      },
-      animation: {
-        "fade-up": "fade-up 0.5s ease-out",
-        "fade-in": "fade-in 0.5s ease-out",
       },
     },
   },

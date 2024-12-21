@@ -3,42 +3,42 @@ import { GlassCard } from "./GlassCard";
 const techStacks = [
   {
     name: "MERN Stack",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/mern.png", // Replace with actual tech logos
     description: "MongoDB, Express.js, React, Node.js"
   },
   {
     name: "MEAN Stack",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/mean.png",
     description: "MongoDB, Express.js, Angular, Node.js"
   },
   {
     name: "DevOps",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/devops.png",
     description: "Docker, Kubernetes, Jenkins, GitLab CI/CD"
   },
   {
     name: "Cloud",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/cloud.png",
     description: "AWS, Azure, GCP"
   },
   {
     name: "AI & Agents",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/ai.png",
     description: "AI Agents & Chatbots"
   },
   {
     name: "Unity",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/unity.png",
     description: "Unity 3D & Virtual Worlds"
   },
   {
     name: "Blockchain",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/blockchain.png",
     description: "Ethereum, Solidity, Web3.js"
   },
   {
     name: "Python Django",
-    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    icon: "/tech-logos/django.png",
     description: "Python Web Development with Django"
   }
 ];

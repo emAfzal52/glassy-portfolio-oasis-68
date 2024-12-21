@@ -6,6 +6,7 @@ import { Hero } from "@/components/Hero";
 import { TechStacks } from "@/components/TechStacks";
 import { Testimonials } from "@/components/Testimonials";
 import { CustomCursor } from "@/components/CustomCursor";
+import { SocialLinks } from "@/components/SocialLinks";
 
 const services = [
   {
@@ -42,42 +43,47 @@ const services = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-hero text-white">
+    <div className="min-h-screen">
       <CustomCursor />
       <Navigation />
       
-      <section id="hero">
+      <section id="hero" className="bg-sections-hero text-cyan-200">
         <Hero />
       </section>
 
-      {/* About Section with Tech Stack */}
-      <section id="about" className="container py-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">About My Tech Stack</h2>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            I leverage these cutting-edge technologies to build innovative solutions that transform ideas into digital reality.
-          </p>
-        </div>
-        <TechStacks />
-      </section>
-
-      {/* Services Section */}
-      <section id="services" className="container py-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service) => (
-            <ServiceCard key={service.title} {...service} />
-          ))}
+      <section id="about" className="bg-sections-about text-white">
+        <div className="container py-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">About My Tech Stack</h2>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              I leverage these cutting-edge technologies to build innovative solutions that transform ideas into digital reality.
+            </p>
+          </div>
+          <TechStacks />
         </div>
       </section>
 
-      <Testimonials />
+      <section id="services" className="bg-sections-services text-gray-800">
+        <div className="container py-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <ServiceCard key={service.title} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="container py-20">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
-        <GlassCard className="max-w-xl mx-auto">
-          <form className="space-y-6">
+      <section id="testimonials" className="bg-sections-testimonials text-white">
+        <Testimonials />
+      </section>
+
+      <section id="contact" className="bg-sections-testimonials text-white">
+        <div className="container py-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
+          <div className="flex flex-col items-center gap-8">
+            <GlassCard className="max-w-xl w-full">
+              <form className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
                 Name
@@ -114,19 +120,49 @@ const Index = () => {
             >
               Send Message
             </button>
-          </form>
-        </GlassCard>
+              </form>
+            </GlassCard>
+            
+            <GlassCard className="max-w-xl w-full text-center">
+              <h3 className="text-xl font-semibold mb-4">Book a Meeting</h3>
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID"
+                style={{ border: 0 }}
+                width="100%"
+                height="400"
+                frameBorder="0"
+                scrolling="no"
+              ></iframe>
+            </GlassCard>
+          </div>
+        </div>
       </section>
 
-      {/* Footer */}
-      <footer className="container py-8 border-t border-white/10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-foreground/80">
-            © 2024 Muhammad Afzal. All rights reserved.
-          </p>
-          <div className="flex gap-8">
-            <a href="#testimonials" className="text-white/80 hover:text-white transition-colors">Testimonials</a>
-            <a href="#contact" className="text-white/80 hover:text-white transition-colors">Contact</a>
+      <footer className="bg-sections-footer text-gray-300">
+        <div className="container py-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Contact</h3>
+              <SocialLinks />
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+              <div className="flex flex-col gap-2">
+                <a href="#about" className="hover:text-white transition-colors">About</a>
+                <a href="#services" className="hover:text-white transition-colors">Services</a>
+                <a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a>
+                <a href="#contact" className="hover:text-white transition-colors">Contact</a>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
+              <p className="mb-2">Email: afzalishaq52@gmail.com</p>
+              <p>Follow me on social media</p>
+              <SocialLinks />
+            </div>
+          </div>
+          <div className="mt-8 pt-8 border-t border-gray-700 text-center">
+            <p>© 2024 Muhammad Afzal. All rights reserved.</p>
           </div>
         </div>
       </footer>
