@@ -33,13 +33,41 @@ const services = [
 ];
 
 const techStacks = [
-  "MERN Stack (MongoDB, Express.js, React, Node.js)",
-  "MEAN Stack (MongoDB, Express.js, Angular, Node.js)",
-  "DevOps (Docker, Kubernetes, Jenkins, GitLab CI/CD)",
-  "Cloud (AWS, Azure, GCP)",
-  "Generative AI & Machine Learning",
-  "Unity 3D & Virtual Worlds",
-  "Blockchain (Ethereum, Solidity, Web3.js)",
+  {
+    name: "MERN Stack",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "MongoDB, Express.js, React, Node.js"
+  },
+  {
+    name: "MEAN Stack",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "MongoDB, Express.js, Angular, Node.js"
+  },
+  {
+    name: "DevOps",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "Docker, Kubernetes, Jenkins, GitLab CI/CD"
+  },
+  {
+    name: "Cloud",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "AWS, Azure, GCP"
+  },
+  {
+    name: "AI & ML",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "Generative AI & Machine Learning"
+  },
+  {
+    name: "Unity",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "Unity 3D & Virtual Worlds"
+  },
+  {
+    name: "Blockchain",
+    icon: "/lovable-uploads/a4fdf3c0-4888-4d7b-a222-be3f9df2362c.png",
+    description: "Ethereum, Solidity, Web3.js"
+  }
 ];
 
 const Index = () => {
@@ -65,18 +93,6 @@ const Index = () => {
             </p>
           </GlassCard>
 
-          {/* Tech Stacks Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 animate-fade-up" style={{ animationDelay: "500ms" }}>
-            {techStacks.map((tech, index) => (
-              <div
-                key={tech}
-                className="backdrop-blur-lg bg-glass/20 border border-white/10 rounded-lg px-4 py-3 text-sm text-white/90"
-              >
-                {tech}
-              </div>
-            ))}
-          </div>
-          
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 animate-fade-up" style={{ animationDelay: "600ms" }}>
             <a
               href="https://calendar.google.com"
@@ -89,6 +105,26 @@ const Index = () => {
             </a>
             <SocialLinks />
           </div>
+        </div>
+      </section>
+
+      {/* About Section with Tech Stack */}
+      <section id="about" className="container py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {techStacks.map((tech) => (
+            <GlassCard 
+              key={tech.name}
+              className="flex flex-col items-center justify-center gap-4 p-6 hover:scale-105 transition-transform"
+            >
+              <img 
+                src={tech.icon} 
+                alt={tech.name} 
+                className="w-16 h-16 object-contain"
+              />
+              <h3 className="text-lg font-semibold">{tech.name}</h3>
+              <p className="text-sm text-white/70 text-center">{tech.description}</p>
+            </GlassCard>
+          ))}
         </div>
       </section>
 
