@@ -1,6 +1,6 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { GlassCard } from "./GlassCard";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Circle, CircleDot } from "lucide-react";
 
 const testimonials = [
   {
@@ -37,43 +37,68 @@ const testimonials = [
 
 export const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
-  const scroll = (direction: 'left' | 'right') => {
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setStartX(e.pageX - (scrollRef.current?.offsetLeft || 0));
+    setScrollLeft(scrollRef.current?.scrollLeft || 0);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - (scrollRef.current?.offsetLeft || 0);
+    const walk = (x - startX) * 2;
     if (scrollRef.current) {
-      const scrollAmount = 340; // Width of one card + gap
-      const scrollLeft = scrollRef.current.scrollLeft;
-      const newScrollLeft = direction === 'left' 
-        ? scrollLeft - scrollAmount 
-        : scrollLeft + scrollAmount;
-      
+      scrollRef.current.scrollLeft = scrollLeft - walk;
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    if (scrollRef.current) {
+      const scrollPosition = scrollRef.current.scrollLeft;
+      const cardWidth = scrollRef.current.offsetWidth / 3;
+      const newIndex = Math.round(scrollPosition / cardWidth);
+      setActiveIndex(newIndex);
       scrollRef.current.scrollTo({
-        left: newScrollLeft,
+        left: newIndex * cardWidth,
         behavior: 'smooth'
       });
     }
   };
 
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const cardWidth = scrollRef.current.offsetWidth / 3;
+      const newIndex = Math.round(scrollRef.current.scrollLeft / cardWidth);
+      setActiveIndex(newIndex);
+    }
+  };
+
   return (
-    <section id="testimonials" className="container py-20">
+    <section id="testimonials" className="container max-w-6xl mx-auto py-20">
       <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Clients Say</h2>
       
       <div className="relative">
-        <button 
-          onClick={() => scroll('left')}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-accent/80 hover:bg-accent text-white p-2 rounded-full transform -translate-x-1/2"
-        >
-          <ChevronLeft className="w-6 h-6" />
-        </button>
-        
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-8 pb-4 px-8 snap-x snap-mandatory scrollbar-hide"
+          className="flex overflow-x-auto gap-8 pb-4 px-8 snap-x snap-mandatory scrollbar-hide cursor-grab active:cursor-grabbing"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseUp}
+          onScroll={handleScroll}
         >
           {testimonials.map((testimonial, index) => (
             <GlassCard 
               key={index}
-              className="flex-none w-80 flex flex-col gap-4 p-6 snap-center animate-fade-up hover:scale-105 transition-transform"
+              className="flex-none w-[calc(33.333%-1.33rem)] min-w-[calc(33.333%-1.33rem)] flex flex-col gap-4 p-6 snap-center animate-fade-up hover:scale-105 transition-transform"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="flex items-center gap-4">
@@ -92,12 +117,15 @@ export const Testimonials = () => {
           ))}
         </div>
 
-        <button 
-          onClick={() => scroll('right')}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-accent/80 hover:bg-accent text-white p-2 rounded-full transform translate-x-1/2"
-        >
-          <ChevronRight className="w-6 h-6" />
-        </button>
+        <div className="flex justify-center gap-2 mt-6">
+          {Array.from({ length: Math.ceil(testimonials.length / 3) }).map((_, index) => (
+            index === activeIndex ? (
+              <CircleDot key={index} className="w-4 h-4 text-accent" />
+            ) : (
+              <Circle key={index} className="w-4 h-4 text-white/50" />
+            )
+          ))}
+        </div>
       </div>
     </section>
   );
