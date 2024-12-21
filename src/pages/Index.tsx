@@ -42,13 +42,7 @@ const services = [
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-hero text-white" 
-        style={{ 
-          backgroundImage: `url('/lovable-uploads/6c559c27-d00c-41c6-aed5-1904338c5695.png')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}>
+    <div className="min-h-screen bg-hero text-white">
       <CustomCursor />
       <Navigation />
       

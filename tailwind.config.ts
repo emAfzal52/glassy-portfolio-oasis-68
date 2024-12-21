@@ -25,23 +25,23 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
-          DEFAULT: "#0EA5E9",
+          DEFAULT: "#9b87f5", // Deep purple
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#1E40AF",
+          DEFAULT: "#1A1F2C", // Dark navy
           foreground: "#ffffff",
         },
         accent: {
-          DEFAULT: "#8B5CF6",
+          DEFAULT: "#8B5CF6", // Bright purple
           foreground: "#ffffff",
         },
         glass: {
-          DEFAULT: "rgba(255, 255, 255, 0.1)",
-          dark: "rgba(0, 0, 0, 0.1)",
+          DEFAULT: "rgba(255, 255, 255, 0.05)",
+          dark: "rgba(0, 0, 0, 0.3)",
         },
         hero: {
-          DEFAULT: "#020817",
+          DEFAULT: "#222222", // Dark gray
         },
       },
       fontFamily: {
