@@ -22,18 +22,23 @@ export const Navigation = () => {
 
   return (
     <GlassCard 
-      className={`fixed w-full z-50 transition-transform duration-300 ${
+      className={`fixed w-full z-50 transition-transform duration-300 px-6 py-4 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <nav className="max-w-4xl mx-auto px-8 py-6">
-        <div className="flex items-center justify-center">
-          <div className="hidden md:flex items-center space-x-12">
+      <nav className="container mx-auto">
+        <div className="flex items-center justify-between">
+          <a href="#" className="text-xl font-bold text-white hover:text-accent transition-colors">
+            Neuralberry
+          </a>
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
             <a href="#about" className="text-white hover:text-accent transition-colors">
               About
             </a>
-            <a href="#projects" className="text-white hover:text-accent transition-colors">
-              Projects
+            <a href="#services" className="text-white hover:text-accent transition-colors">
+              Services
             </a>
             <a href="#testimonials" className="text-white hover:text-accent transition-colors">
               Testimonials
@@ -43,6 +48,7 @@ export const Navigation = () => {
             </a>
           </div>
 
+          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white focus:outline-none"
             onClick={toggleMenu}
@@ -51,6 +57,7 @@ export const Navigation = () => {
           </button>
         </div>
 
+        {/* Mobile Navigation */}
         {isOpen && (
           <div className="md:hidden mt-4 space-y-4">
             <a
@@ -61,11 +68,11 @@ export const Navigation = () => {
               About
             </a>
             <a
-              href="#projects"
+              href="#services"
               className="block text-white hover:text-accent transition-colors"
               onClick={toggleMenu}
             >
-              Projects
+              Services
             </a>
             <a
               href="#testimonials"

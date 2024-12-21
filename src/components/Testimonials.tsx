@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { GlassCard } from "./GlassCard";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const testimonials = [
   {
@@ -37,20 +38,42 @@ const testimonials = [
 export const Testimonials = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 340; // Width of one card + gap
+      const scrollLeft = scrollRef.current.scrollLeft;
+      const newScrollLeft = direction === 'left' 
+        ? scrollLeft - scrollAmount 
+        : scrollLeft + scrollAmount;
+      
+      scrollRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <section id="testimonials" className="container py-20">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-white">What Clients Say</h2>
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">What Clients Say</h2>
       
       <div className="relative">
+        <button 
+          onClick={() => scroll('left')}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-accent/80 hover:bg-accent text-white p-2 rounded-full transform -translate-x-1/2"
+        >
+          <ChevronLeft className="w-6 h-6" />
+        </button>
+        
         <div 
           ref={scrollRef}
-          className="flex overflow-x-auto gap-8 pb-8 px-8 snap-x snap-mandatory scrollbar-hide"
+          className="flex overflow-x-auto gap-8 pb-4 px-8 snap-x snap-mandatory scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {testimonials.map((testimonial, index) => (
             <GlassCard 
               key={index}
-              className="flex-none w-[calc(33.333%-1rem)] min-w-[320px] flex flex-col gap-4 p-6 snap-center animate-fade-up hover:scale-105 transition-transform"
+              className="flex-none w-80 flex flex-col gap-4 p-6 snap-center animate-fade-up hover:scale-105 transition-transform"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <div className="flex items-center gap-4">
@@ -60,7 +83,7 @@ export const Testimonials = () => {
                   className="w-12 h-12 rounded-full object-cover"
                 />
                 <div>
-                  <h3 className="font-semibold text-white">{testimonial.name}</h3>
+                  <h3 className="font-semibold">{testimonial.name}</h3>
                   <p className="text-sm text-white/70">{testimonial.role}</p>
                 </div>
               </div>
@@ -69,11 +92,12 @@ export const Testimonials = () => {
           ))}
         </div>
 
-        <div className="flex justify-center gap-3 mt-6">
-          <span className="w-2 h-2 rounded-full bg-white/50 animate-dot-slide" />
-          <span className="w-2 h-2 rounded-full bg-white/50 animate-dot-slide" style={{ animationDelay: '0.5s' }} />
-          <span className="w-2 h-2 rounded-full bg-white/50 animate-dot-slide" style={{ animationDelay: '1s' }} />
-        </div>
+        <button 
+          onClick={() => scroll('right')}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-accent/80 hover:bg-accent text-white p-2 rounded-full transform translate-x-1/2"
+        >
+          <ChevronRight className="w-6 h-6" />
+        </button>
       </div>
     </section>
   );
