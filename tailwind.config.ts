@@ -33,11 +33,11 @@ export default {
           foreground: "#ffffff",
         },
         sections: {
-          hero: "#2F4F4F", // Dark slate gray
-          about: "#808080", // Medium gray
-          services: "#D3D3D3", // Light gray
-          testimonials: "#36454F", // Charcoal
-          footer: "#1A1A1A", // Very dark gray
+          hero: "#0A051E", // Dark purple background
+          about: "#0A051E",
+          services: "#0A051E",
+          testimonials: "#0A051E",
+          footer: "#0A051E",
         },
         accent: {
           DEFAULT: "#8B5CF6",
@@ -48,6 +48,15 @@ export default {
           dark: "rgba(0, 0, 0, 0.3)",
         },
       },
+      keyframes: {
+        "dot-slide": {
+          "0%, 100%": { transform: "translateX(0)" },
+          "50%": { transform: "translateX(8px)" },
+        }
+      },
+      animation: {
+        "dot-slide": "dot-slide 1.5s infinite",
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],

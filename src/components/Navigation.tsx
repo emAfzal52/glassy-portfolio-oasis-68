@@ -22,23 +22,18 @@ export const Navigation = () => {
 
   return (
     <GlassCard 
-      className={`fixed w-full z-50 transition-transform duration-300 px-6 py-4 ${
+      className={`fixed w-full z-50 transition-transform duration-300 px-8 py-6 ${
         visible ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <nav className="container mx-auto">
-        <div className="flex items-center justify-between">
-          <a href="#" className="text-xl font-bold text-white hover:text-accent transition-colors">
-            Neuralberry
-          </a>
-          
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+        <div className="flex items-center justify-center">
+          <div className="hidden md:flex items-center space-x-12">
             <a href="#about" className="text-white hover:text-accent transition-colors">
               About
             </a>
-            <a href="#services" className="text-white hover:text-accent transition-colors">
-              Services
+            <a href="#projects" className="text-white hover:text-accent transition-colors">
+              Projects
             </a>
             <a href="#testimonials" className="text-white hover:text-accent transition-colors">
               Testimonials
@@ -68,11 +63,11 @@ export const Navigation = () => {
               About
             </a>
             <a
-              href="#services"
+              href="#projects"
               className="block text-white hover:text-accent transition-colors"
               onClick={toggleMenu}
             >
-              Services
+              Projects
             </a>
             <a
               href="#testimonials"
