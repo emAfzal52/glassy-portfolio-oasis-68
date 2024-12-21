@@ -3,6 +3,7 @@ import { GlassCard } from "@/components/GlassCard";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
+import { Company } from "@/components/Company";
 import { TechStacks } from "@/components/TechStacks";
 import { Testimonials } from "@/components/Testimonials";
 import { CustomCursor } from "@/components/CustomCursor";
@@ -49,6 +50,10 @@ const Index = () => {
       
       <section id="hero" className="bg-sections-hero text-cyan-200">
         <Hero />
+      </section>
+
+      <section id="company" className="bg-sections-about text-white">
+        <Company />
       </section>
 
       <section id="about" className="bg-sections-about text-white">
