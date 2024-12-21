@@ -1,58 +1,96 @@
-import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact", href: "#contact" },
-];
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
+import { GlassCard } from "./GlassCard";
 
 export const Navigation = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isOpen, setIsOpen] = useState(false);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      const heroSection = document.getElementById('hero');
-      const heroBottom = heroSection?.getBoundingClientRect().bottom ?? 0;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setIsVisible(false);
-      } else if (currentScrollY < lastScrollY || heroBottom > 0) {
-        setIsVisible(true);
-      }
-
-      setLastScrollY(currentScrollY);
+      const currentScrollPos = window.scrollY;
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+      setPrevScrollPos(currentScrollPos);
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [prevScrollPos]);
 
   return (
-    <nav className={`fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-transform duration-300 ${
-      isVisible ? 'translate-y-0' : '-translate-y-20'
-    }`}>
-      <div className="backdrop-blur-lg bg-glass/30 border border-white/20 rounded-full px-6 py-3">
-        <ul className="flex items-center gap-8">
-          {navItems.map((item) => (
-            <li key={item.label}>
-              <a
-                href={item.href}
-                className={cn(
-                  "text-sm font-medium text-white/80 hover:text-white transition-colors",
-                  "relative after:absolute after:left-0 after:bottom-0 after:h-[1px] after:w-0",
-                  "after:bg-accent after:transition-all hover:after:w-full"
-                )}
-              >
-                {item.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </nav>
+    <GlassCard 
+      className={`fixed w-full z-50 transition-transform duration-300 px-8 py-6 ${
+        visible ? 'translate-y-0' : '-translate-y-full'
+      }`}
+    >
+      <nav className="container mx-auto">
+        <div className="flex items-center justify-between">
+          <a href="#" className="text-2xl font-bold text-white">
+            Muhammad Afzal
+          </a>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#about" className="text-white hover:text-accent transition-colors">
+              About
+            </a>
+            <a href="#services" className="text-white hover:text-accent transition-colors">
+              Services
+            </a>
+            <a href="#testimonials" className="text-white hover:text-accent transition-colors">
+              Testimonials
+            </a>
+            <a href="#contact" className="text-white hover:text-accent transition-colors">
+              Contact
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={toggleMenu}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {isOpen && (
+          <div className="md:hidden mt-4 space-y-4">
+            <a
+              href="#about"
+              className="block text-white hover:text-accent transition-colors"
+              onClick={toggleMenu}
+            >
+              About
+            </a>
+            <a
+              href="#services"
+              className="block text-white hover:text-accent transition-colors"
+              onClick={toggleMenu}
+            >
+              Services
+            </a>
+            <a
+              href="#testimonials"
+              className="block text-white hover:text-accent transition-colors"
+              onClick={toggleMenu}
+            >
+              Testimonials
+            </a>
+            <a
+              href="#contact"
+              className="block text-white hover:text-accent transition-colors"
+              onClick={toggleMenu}
+            >
+              Contact
+            </a>
+          </div>
+        )}
+      </nav>
+    </GlassCard>
   );
 };

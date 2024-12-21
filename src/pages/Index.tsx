@@ -81,50 +81,52 @@ const Index = () => {
       <section id="contact" className="bg-sections-testimonials text-white">
         <div className="container py-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
-          <div className="flex flex-col items-center gap-8">
-            <GlassCard className="max-w-xl w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Contact Form */}
+            <GlassCard className="w-full">
               <form className="space-y-6">
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-              />
-            </div>
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-              />
-            </div>
-            <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-            >
-              Send Message
-            </button>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">
+                    Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+                  ></textarea>
+                </div>
+                <button
+                  type="submit"
+                  className="w-full bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+                >
+                  Send Message
+                </button>
               </form>
             </GlassCard>
-            
-            <GlassCard className="max-w-xl w-full text-center">
-              <h3 className="text-xl font-semibold mb-4">Book a Meeting</h3>
+
+            {/* Calendar Card */}
+            <GlassCard className="w-full">
+              <h3 className="text-xl font-semibold mb-6">Book a Meeting</h3>
               <iframe
                 src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID"
                 style={{ border: 0 }}
@@ -132,6 +134,7 @@ const Index = () => {
                 height="400"
                 frameBorder="0"
                 scrolling="no"
+                className="rounded-lg"
               ></iframe>
             </GlassCard>
           </div>
@@ -142,12 +145,14 @@ const Index = () => {
         <div className="container py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-xl font-semibold mb-4">Contact</h3>
-              <SocialLinks />
+              <h3 className="text-xl font-semibold mb-6">Follow Me</h3>
+              <div className="space-y-4">
+                <SocialLinks />
+              </div>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-              <div className="flex flex-col gap-2">
+              <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
+              <div className="flex flex-col gap-3">
                 <a href="#about" className="hover:text-white transition-colors">About</a>
                 <a href="#services" className="hover:text-white transition-colors">Services</a>
                 <a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a>
@@ -155,10 +160,17 @@ const Index = () => {
               </div>
             </div>
             <div>
-              <h3 className="text-xl font-semibold mb-4">Get in Touch</h3>
-              <p className="mb-2">Email: afzalishaq52@gmail.com</p>
-              <p>Follow me on social media</p>
-              <SocialLinks />
+              <h3 className="text-xl font-semibold mb-6">Get in Touch</h3>
+              <div className="space-y-3">
+                <p className="flex items-center gap-2">
+                  <span>Email:</span>
+                  <a href="mailto:afzalishaq52@gmail.com" className="hover:text-white transition-colors">
+                    afzalishaq52@gmail.com
+                  </a>
+                </p>
+                <p>Follow me on social media</p>
+                <SocialLinks />
+              </div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-700 text-center">
