@@ -47,6 +47,9 @@ export const Navigation = () => {
               <a href="#hire-me" className="text-white hover:text-accent transition-colors">
                 Hire Me
               </a>
+              <a href="#company" className="text-white hover:text-accent transition-colors">
+                My Company
+              </a>
               <a href="#newsletter" className="text-white hover:text-accent transition-colors">
                 Newsletter
               </a>
@@ -94,6 +97,13 @@ export const Navigation = () => {
                 onClick={toggleMenu}
               >
                 Hire Me
+              </a>
+              <a
+                href="#company"
+                className="block text-white hover:text-accent transition-colors"
+                onClick={toggleMenu}
+              >
+                My Company
               </a>
               <a
                 href="#newsletter"

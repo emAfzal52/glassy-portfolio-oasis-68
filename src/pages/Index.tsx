@@ -53,37 +53,6 @@ const Index = () => {
         <Hero />
       </section>
 
-      <section id="company" className="bg-sections-about text-white">
-        <Company />
-      </section>
-
-      <section id="about" className="bg-sections-about text-white">
-        <div className="container py-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">About My Tech Stack</h2>
-            <p className="text-xl text-white/80 max-w-2xl mx-auto">
-              I leverage these cutting-edge technologies to build innovative solutions that transform ideas into digital reality.
-            </p>
-          </div>
-          <TechStacks />
-        </div>
-      </section>
-
-      <section id="services" className="bg-sections-services text-gray-800">
-        <div className="container py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="testimonials" className="bg-sections-testimonials text-white">
-        <Testimonials />
-      </section>
-
       <section id="hire-me" className="bg-sections-about text-white py-20">
         <div className="container">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Hire Me</h2>
@@ -114,6 +83,37 @@ const Index = () => {
             </GlassCard>
           </div>
         </div>
+      </section>
+
+      <section id="about" className="bg-sections-about text-white">
+        <div className="container py-10">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">About My Tech Stack</h2>
+            <p className="text-xl text-white/80 max-w-2xl mx-auto">
+              I leverage these cutting-edge technologies to build innovative solutions that transform ideas into digital reality.
+            </p>
+          </div>
+          <TechStacks />
+        </div>
+      </section>
+
+      <section id="services" className="bg-sections-services text-gray-800">
+        <div className="container py-20">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service) => (
+              <ServiceCard key={service.title} {...service} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="testimonials" className="bg-sections-testimonials text-white">
+        <Testimonials />
+      </section>
+
+      <section id="company" className="bg-sections-about text-white">
+        <Company />
       </section>
 
       <section id="newsletter" className="bg-sections-testimonials text-white py-20">
