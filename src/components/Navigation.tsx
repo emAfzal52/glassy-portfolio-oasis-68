@@ -23,7 +23,7 @@ export const Navigation = () => {
   return (
     <div className="fixed w-full z-50 flex justify-center">
       <GlassCard 
-        className={`max-w-4xl w-full mx-4 transition-transform duration-300 px-6 py-4 ${
+        className={`max-w-6xl w-full mx-4 transition-transform duration-300 px-6 py-4 ${
           visible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -44,20 +44,8 @@ export const Navigation = () => {
               <a href="#testimonials" className="text-white hover:text-accent transition-colors">
                 Testimonials
               </a>
-              <a href="#hire-me" className="text-white hover:text-accent transition-colors">
-                Hire Me
-              </a>
-              <a href="#company" className="text-white hover:text-accent transition-colors">
-                My Company
-              </a>
-              <a href="#book-meeting" className="text-white hover:text-accent transition-colors">
-                Book Meeting
-              </a>
               <a href="#contact" className="text-white hover:text-accent transition-colors">
                 Contact
-              </a>
-              <a href="#newsletter" className="text-white hover:text-accent transition-colors">
-                Newsletter
               </a>
             </div>
 
@@ -95,39 +83,11 @@ export const Navigation = () => {
                 Testimonials
               </a>
               <a
-                href="#hire-me"
-                className="block text-white hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Hire Me
-              </a>
-              <a
-                href="#company"
-                className="block text-white hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                My Company
-              </a>
-              <a
-                href="#book-meeting"
-                className="block text-white hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Book Meeting
-              </a>
-              <a
                 href="#contact"
                 className="block text-white hover:text-accent transition-colors"
                 onClick={toggleMenu}
               >
                 Contact
-              </a>
-              <a
-                href="#newsletter"
-                className="block text-white hover:text-accent transition-colors"
-                onClick={toggleMenu}
-              >
-                Newsletter
               </a>
             </div>
           )}
