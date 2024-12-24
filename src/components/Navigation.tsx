@@ -23,7 +23,7 @@ export const Navigation = () => {
   return (
     <div className="fixed w-full z-50 flex justify-center">
       <GlassCard 
-        className={`max-w-6xl w-full mx-4 transition-transform duration-300 px-6 py-4 ${
+        className={`max-w-4xl w-full mx-4 transition-transform duration-300 px-6 py-4 ${
           visible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -43,6 +43,12 @@ export const Navigation = () => {
               </a>
               <a href="#testimonials" className="text-white hover:text-accent transition-colors">
                 Testimonials
+              </a>
+              <a href="#hire-me" className="text-white hover:text-accent transition-colors">
+                Hire Me
+              </a>
+              <a href="#newsletter" className="text-white hover:text-accent transition-colors">
+                Newsletter
               </a>
               <a href="#contact" className="text-white hover:text-accent transition-colors">
                 Contact
@@ -81,6 +87,20 @@ export const Navigation = () => {
                 onClick={toggleMenu}
               >
                 Testimonials
+              </a>
+              <a
+                href="#hire-me"
+                className="block text-white hover:text-accent transition-colors"
+                onClick={toggleMenu}
+              >
+                Hire Me
+              </a>
+              <a
+                href="#newsletter"
+                className="block text-white hover:text-accent transition-colors"
+                onClick={toggleMenu}
+              >
+                Newsletter
               </a>
               <a
                 href="#contact"

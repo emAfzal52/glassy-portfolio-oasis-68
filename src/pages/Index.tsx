@@ -83,6 +83,67 @@ const Index = () => {
         <Testimonials />
       </section>
 
+      <section id="hire-me" className="bg-sections-about text-white py-20">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Hire Me</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <GlassCard className="text-center">
+              <h3 className="text-2xl font-bold mb-4">Upwork</h3>
+              <p className="mb-6">Let's collaborate on your next project through Upwork</p>
+              <a 
+                href="https://www.upwork.com/your-profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:scale-105"
+              >
+                View Profile
+              </a>
+            </GlassCard>
+            <GlassCard className="text-center">
+              <h3 className="text-2xl font-bold mb-4">Fiverr</h3>
+              <p className="mb-6">Check out my gigs and services on Fiverr</p>
+              <a 
+                href="https://www.fiverr.com/your-profile" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:scale-105"
+              >
+                View Profile
+              </a>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      <section id="newsletter" className="bg-sections-testimonials text-white py-20">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Subscribe to my Newsletter</h2>
+            <GlassCard>
+              <p className="text-lg mb-8">
+                Dive into the ever-evolving world of AI, Cloud, DevOps, and Cybersecurity! Our newsletter keeps you ahead of the curve with insights into cutting-edge technologies, best practices, and emerging trends that shape these critical domains. Whether it's breakthroughs in artificial intelligence, innovations in cloud computing, DevOps strategies, or the latest in cybersecurity, we've got you covered.
+              </p>
+              <p className="text-lg mb-8">
+                Stay informed, stay secure, and stay ahead in this dynamic digital landscape. Let's explore what's next in tech together!
+              </p>
+              <form className="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="w-full md:w-96 px-6 py-3 rounded-full bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+                <button
+                  type="submit"
+                  className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:scale-105"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
       <section id="contact" className="bg-sections-testimonials text-white">
         <div className="container py-20">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
