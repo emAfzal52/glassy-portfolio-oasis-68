@@ -9,6 +9,7 @@ import { CustomCursor } from "@/components/CustomCursor";
 import { Newsletter } from "@/components/Newsletter";
 import { BookMeeting } from "@/components/BookMeeting";
 import { ContactSection } from "@/components/ContactSection";
+import { SocialLinks } from "@/components/SocialLinks";
 
 const services = [
   {
