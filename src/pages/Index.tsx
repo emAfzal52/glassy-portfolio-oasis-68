@@ -8,6 +8,7 @@ import { TechStacks } from "@/components/TechStacks";
 import { Testimonials } from "@/components/Testimonials";
 import { CustomCursor } from "@/components/CustomCursor";
 import { SocialLinks } from "@/components/SocialLinks";
+import { Newsletter } from "@/components/Newsletter";
 
 const services = [
   {
@@ -116,95 +117,7 @@ const Index = () => {
       </section>
 
       <section id="newsletter" className="bg-sections-testimonials text-white py-20">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Subscribe to my Newsletter</h2>
-            <GlassCard>
-              <p className="text-lg mb-8">
-                Dive into the ever-evolving world of AI, Cloud, DevOps, and Cybersecurity! Our newsletter keeps you ahead of the curve with insights into cutting-edge technologies, best practices, and emerging trends that shape these critical domains. Whether it's breakthroughs in artificial intelligence, innovations in cloud computing, DevOps strategies, or the latest in cybersecurity, we've got you covered.
-              </p>
-              <p className="text-lg mb-8">
-                Stay informed, stay secure, and stay ahead in this dynamic digital landscape. Let's explore what's next in tech together!
-              </p>
-              <form className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="w-full md:w-96 px-6 py-3 rounded-full bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-                />
-                <button
-                  type="submit"
-                  className="bg-accent hover:bg-accent/90 text-white px-8 py-3 rounded-full font-medium transition-all hover:scale-105"
-                >
-                  Subscribe
-                </button>
-              </form>
-            </GlassCard>
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="bg-sections-testimonials text-white">
-        <div className="container py-20">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Get in Touch</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Contact Form */}
-            <GlassCard className="w-full">
-              <form className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-2">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    rows={4}
-                    className="w-full px-4 py-2 rounded-lg bg-glass/30 border border-white/20 focus:outline-none focus:ring-2 focus:ring-accent"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                >
-                  Send Message
-                </button>
-              </form>
-            </GlassCard>
-
-            {/* Calendar Card */}
-            <GlassCard className="w-full">
-              <h3 className="text-xl font-semibold mb-6">Book a Meeting</h3>
-              <iframe
-                src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID"
-                style={{ border: 0 }}
-                width="100%"
-                height="400"
-                frameBorder="0"
-                scrolling="no"
-                className="rounded-lg"
-              ></iframe>
-            </GlassCard>
-          </div>
-        </div>
+        <Newsletter />
       </section>
 
       <footer className="bg-sections-footer text-gray-300">
