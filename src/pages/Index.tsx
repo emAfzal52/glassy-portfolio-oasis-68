@@ -1,4 +1,4 @@
-import { Calendar, Code, Globe, Database, Cloud, Brain } from "lucide-react";
+import { Calendar, Code, Globe, Database, Cloud, Brain, Mail, Phone } from "lucide-react";
 import { GlassCard } from "@/components/GlassCard";
 import { ServiceCard } from "@/components/ServiceCard";
 import { Navigation } from "@/components/Navigation";
@@ -118,6 +118,64 @@ const Index = () => {
 
       <section id="newsletter" className="bg-sections-testimonials text-white py-20">
         <Newsletter />
+      </section>
+
+      <section id="book-meeting" className="bg-sections-about text-white py-20">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Book a Meeting</h2>
+          <div className="max-w-4xl mx-auto">
+            <GlassCard className="text-center">
+              <div className="flex flex-col items-center gap-6">
+                <Calendar className="w-12 h-12 text-accent" />
+                <h3 className="text-2xl font-bold">Schedule a Consultation</h3>
+                <p className="text-lg text-white/80 mb-6">
+                  Let's discuss your project and explore how we can work together to bring your ideas to life.
+                </p>
+                <a 
+                  href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0PwXH9HE7_h6WGywXYg_J5nTp_rA8A_1A-VWk="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full font-medium transition-all hover:scale-105"
+                >
+                  <Calendar className="w-5 h-5" />
+                  Schedule Now
+                </a>
+              </div>
+            </GlassCard>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-sections-testimonials text-white py-20">
+        <div className="container">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Contact Me</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <GlassCard className="text-center">
+              <div className="flex flex-col items-center gap-4">
+                <Mail className="w-8 h-8 text-accent" />
+                <h3 className="text-xl font-bold">Email</h3>
+                <a 
+                  href="mailto:afzalishaq52@gmail.com"
+                  className="text-accent hover:underline"
+                >
+                  afzalishaq52@gmail.com
+                </a>
+              </div>
+            </GlassCard>
+            <GlassCard className="text-center">
+              <div className="flex flex-col items-center gap-4">
+                <Phone className="w-8 h-8 text-accent" />
+                <h3 className="text-xl font-bold">Phone</h3>
+                <a 
+                  href="tel:+923114282526"
+                  className="text-accent hover:underline"
+                >
+                  +92 311 4282526
+                </a>
+              </div>
+            </GlassCard>
+          </div>
+        </div>
       </section>
 
       <footer className="bg-sections-footer text-gray-300">

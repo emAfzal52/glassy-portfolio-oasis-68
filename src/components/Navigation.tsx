@@ -50,11 +50,14 @@ export const Navigation = () => {
               <a href="#company" className="text-white hover:text-accent transition-colors">
                 My Company
               </a>
-              <a href="#newsletter" className="text-white hover:text-accent transition-colors">
-                Newsletter
+              <a href="#book-meeting" className="text-white hover:text-accent transition-colors">
+                Book Meeting
               </a>
               <a href="#contact" className="text-white hover:text-accent transition-colors">
                 Contact
+              </a>
+              <a href="#newsletter" className="text-white hover:text-accent transition-colors">
+                Newsletter
               </a>
             </div>
 
@@ -106,11 +109,11 @@ export const Navigation = () => {
                 My Company
               </a>
               <a
-                href="#newsletter"
+                href="#book-meeting"
                 className="block text-white hover:text-accent transition-colors"
                 onClick={toggleMenu}
               >
-                Newsletter
+                Book Meeting
               </a>
               <a
                 href="#contact"
@@ -118,6 +121,13 @@ export const Navigation = () => {
                 onClick={toggleMenu}
               >
                 Contact
+              </a>
+              <a
+                href="#newsletter"
+                className="block text-white hover:text-accent transition-colors"
+                onClick={toggleMenu}
+              >
+                Newsletter
               </a>
             </div>
           )}
